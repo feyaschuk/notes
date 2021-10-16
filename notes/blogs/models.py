@@ -1,19 +1,9 @@
+from django.contrib.auth import get_user_model
 from django.db import models
-import datetime as dt
 
-from django.contrib.auth.models import AbstractUser
+User = get_user_model()
 
-USER_CITY_CHOICES =['Moscow', 'SPB', 'Khabarovsk']
 
-class User(AbstractUser):
-    city = models.CharField(
-        max_length=150,
-        choices=USER_CITY_CHOICES,        
-        verbose_name="Город пользователя",
-    )    
-
-    def __str__(self):
-        return self.username
 
 class Post(models.Model):
     text = models.TextField(verbose_name='Текст поста')
