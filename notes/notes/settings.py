@@ -1,15 +1,17 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-SECRET_KEY = '$oz!ex*9=j&gb*9s8(9rb_%^)q-54smjraf5^t0=o7keb@tz63'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'www.feyaschuk.pythonanywhere.com',
-    'feyaschuk.pythonanywhere.com',
+    
     "localhost",
     "127.0.0.1",
     "[::1]",
