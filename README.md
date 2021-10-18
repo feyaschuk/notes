@@ -18,7 +18,7 @@
 ```
 git clone https://github.com/feyaschuk/api_yamdb.git
 cd api_yamdb
-
+```
 Cоздать и активировать виртуальное окружение:
 ```
 python3 -m venv env
