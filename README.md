@@ -38,6 +38,11 @@ pip install -r requirements.txt
 ```bash
 python3 manage.py migrate
 ```
+Загрузить тестовый объект:
+
+```bash
+./manage.py loaddata db.json```
+
 Запустить проект:
 ```bash
 python3 manage.py runserver
