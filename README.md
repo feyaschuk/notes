@@ -28,13 +28,14 @@ python3 -m pip install --upgrade pip
 Установить зависимости из файла requirements.txt:
 ```
 pip install -r requirements.txt
-
+```
 Выполнить миграции:
 ```
 python3 manage.py migrate
+```
 Запустить проект:
 ```
 python3 manage.py runserver
+```
 
-![image](https://user-images.githubusercontent.com/81573309/137743216-8ed33bb1-e44f-4364-888f-6698ccda3583.png)
 
