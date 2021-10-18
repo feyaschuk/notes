@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block header %}
+  {% if edit %}
+  Редактировать запись
+  {% else %}
+  Добавить запись
+  {% endif %}
+{% endblock %}
+
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" action={% if edit %}"{% url 'post_edit' edit.author.username edit.id %}"{% else %}"{% url 'new_post' %}"{% endif %}>
+
+  {% csrf_token %}  
+  {{ form.text.errors }}
+  
+  {% for field in form %}
+  
+  <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}<span class="required">*</span>{% endif %}</label>
+  <div class="col-md-6">
+   {{ field }}
+   
+  {% if field.help_text %}
+            
+   <small id="{{ field.id_for_label }}-help" class="form-text text-muted">{{ field.help_text }}</small>
+  {% endif %}
+  
+   </div>                
+    </div>
+    {% endfor %}
+               
+    <div class="col-md-6 offset-md-4">              
+        <button type="submit" class="btn btn-primary">
+ {% if edit %}
+ Сохранить
+ {% else %}
+Добавить
+ {% endif %}
+        </button>
+    </div>
+  </form> 
+{% endblock %}
