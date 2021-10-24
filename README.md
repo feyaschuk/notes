@@ -18,7 +18,7 @@
 git clone https://github.com/feyaschuk/notes.git
 ```
 ```bash
-cd api_yamdb
+cd notes
 ```
 Cоздать и активировать виртуальное окружение:
 ```bash
